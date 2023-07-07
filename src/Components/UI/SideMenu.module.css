@@ -1,0 +1,33 @@
+.sideMenu {
+  padding-left: 20px;
+  width: 250px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 80px;
+}
+
+.menuItems {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menuItems li {
+  padding: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid blueviolet;
+}
+
+.menuItems li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.option {
+  font-weight: 600;
+}
+
+.active {
+  background-color: #333;
+  color: #f1f1f1;
+}

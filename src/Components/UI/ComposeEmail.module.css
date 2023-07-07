@@ -1,0 +1,11 @@
+.compose {
+  border: none;
+  border-radius: 40px;
+  background-color: rgb(36, 58, 184);
+  color: white;
+  padding: 8px 25px;
+  font-weight: 400;
+  font-size: medium;
+  margin-top: 20px;
+  cursor: pointer;
+}

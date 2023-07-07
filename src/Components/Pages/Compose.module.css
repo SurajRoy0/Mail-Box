@@ -1,0 +1,51 @@
+.composeContainer {
+  width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.closeDiv {
+  text-align: end;
+}
+.close {
+  margin-right: 10px;
+  color: rgb(0, 4, 255);
+  font-weight: 600;
+  align-items: end;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.mail {
+  margin-bottom: 20px;
+}
+
+.mail input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #0e2ee9;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #e1e1e1;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+}

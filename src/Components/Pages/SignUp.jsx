@@ -14,7 +14,7 @@ const SignUp = () => {
 
   const navigate = useNavigate();
   const goToSignInHandler = () => {
-    navigate("/sign-in");
+    navigate("/");
   };
 
   const handleEmailChange = (e) => {

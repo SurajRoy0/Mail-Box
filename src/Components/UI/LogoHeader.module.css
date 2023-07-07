@@ -1,0 +1,9 @@
+.logo-continer {
+  display: flex;
+  height: 80px;
+  background-color: gray;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+}
