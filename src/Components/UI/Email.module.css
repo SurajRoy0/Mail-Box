@@ -1,12 +1,12 @@
 .email {
   display: grid;
-  grid-template-columns: 200px auto 100px;
-  box-shadow: 0 0 0 2px #ccc;
+  grid-template-columns: 10px 200px auto 100px;
+  border-bottom: 1px solid rgb(177, 168, 168);
   cursor: pointer;
   margin: 8px 10px;
   align-items: center;
-  gap: 20px;
-  padding: 0 10px;
+  gap: 5px;
+  padding: 10px 10px;
 }
 
 .email p {
@@ -15,4 +15,14 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0;
+}
+
+.email h4 {
+  margin: 0;
+}
+
+.email svg {
+  font-size: 8px;
+  color: rgb(77, 77, 241);
 }

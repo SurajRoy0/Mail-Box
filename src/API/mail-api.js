@@ -56,3 +56,40 @@ export const gettingSentEmails = async (fromEmail) => {
         return error;
     }
 }
+
+export const getSentSingleEmail = async ({ email, id }) => {
+    const formattedEmail = await formatEmail(email)
+    try {
+        const res = await axios.get(
+            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/sent/${id}.json`);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const getInboxSingleEmail = async ({ email, id }) => {
+    console.log(email, id)
+    const formattedEmail = await formatEmail(email)
+    try {
+        const res = await axios.get(
+            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/inbox/${id}.json`);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
+}
+
+export const emailReadHandler = async ({ email, id, data }) => {
+    console.log(data)
+    const formattedEmail = await formatEmail(email)
+    try {
+        const res = await axios.put(
+            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/inbox/${id}.json`, {
+            data
+        });
+        return res.data;
+    } catch (error) {
+        return error;
+    }
+}

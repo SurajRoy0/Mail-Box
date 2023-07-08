@@ -1,7 +1,6 @@
 .sideMenu {
-  height: 100vh;
+  height: calc(100vh - 80px);
   background-color: rgb(4, 10, 37);
-  position: fixed;
   width: 230px;
   border-right: 2px solid whitesmoke;
 }
@@ -14,7 +13,15 @@
   list-style-type: none;
   padding: 0;
 }
-
+.inbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inbox span {
+  margin-right: 10px;
+  color: white;
+}
 .menuItems li {
   padding: 10px;
   padding-left: 0;

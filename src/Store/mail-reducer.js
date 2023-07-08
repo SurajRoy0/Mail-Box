@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     isComposeOpen: false,
+    unReadEmails: 0
 }
 
 const mailSlice = createSlice({
@@ -15,10 +16,13 @@ const mailSlice = createSlice({
         composeCloseHandler(state) {
             state.isComposeOpen = false;
         },
+        setUnReadEmails(state, actions) {
+            state.unReadEmails = actions.payload;
+        },
     }
 })
 
 
-export const { composeOpenHandler, composeCloseHandler } = mailSlice.actions;
+export const { composeOpenHandler, composeCloseHandler, setUnReadEmails } = mailSlice.actions;
 
 export default mailSlice.reducer;

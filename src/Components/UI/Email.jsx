@@ -1,22 +1,17 @@
 import React from "react";
 import styles from "./Email.module.css";
+import { Link } from "react-router-dom";
+import { formatTimeStamp } from "../../HelperFunctions/helperFunctions";
+import { FaCircle } from "react-icons/fa";
 
-function formatTimeStamp(timeStamp) {
-  const formattedDate = new Date(timeStamp).toLocaleString("en-US", {
-    hour: "numeric",
-    minute: "numeric",
-    hour12: true,
-  });
-  return formattedDate;
-}
 const Email = ({ id, email }) => {
-  console.log(email);
   return (
-    <div className={styles.email}>
+    <Link to={`/emails/${id}`} className={styles.email}>
+      <div>{!email.isRead && <FaCircle />}</div>
       <h4>{email.from}</h4>
       <p dangerouslySetInnerHTML={{ __html: email.message }}></p>
       <span>{formatTimeStamp(email.timeStamp)}</span>
-    </div>
+    </Link>
   );
 };
 

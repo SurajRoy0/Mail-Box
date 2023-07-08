@@ -9,6 +9,7 @@ import Inbox from './Components/Pages/Inbox';
 import Sent from './Components/Pages/Sent';
 import Draft from './Components/Pages/Draft';
 import Compose from './Components/Pages/Compose';
+import EmailBody from './Components/Pages/EmailBody';
 
 function App() {
   const isComposeOpen = useSelector(state => state.mail.isComposeOpen)
@@ -16,10 +17,6 @@ function App() {
 
   const mail = useSelector(state => state.mail)
 
-  console.log(mail)
-
-
-  console.log(auth)
   return (<>
     <Routes>
       {!auth.isLogin && <Route path={'/sign-up'} element={<SignUp />} />}
@@ -36,6 +33,7 @@ function App() {
             <Route path={'/'} element={<Inbox />} />
             <Route path={'/sent'} element={<Sent />} />
             <Route path={'/drafts'} element={<Draft />} />
+            <Route path={'/emails/:id'} element={<EmailBody />} />
           </Routes>
         </div>
       </div>

@@ -1,0 +1,29 @@
+.emailBody {
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  height: calc(100vh - 80px);
+}
+.email-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.emailFrom {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.emailMessage {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.emailTimestamp {
+  color: #777;
+  font-size: 12px;
+}
