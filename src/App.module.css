@@ -1,14 +1,8 @@
-.container {
-  display: flex;
-  flex-direction: row;
+.container-body {
+  display: grid;
+  grid-template-columns: 230px auto;
 }
 
 .right-container {
   text-align: center;
-  position: fixed;
-  left: 250px;
-  overflow: scroll;
-  margin-top: 80px;
-  height: calc(100vh - 80px);
-  width: calc(100% - 250px);
 }

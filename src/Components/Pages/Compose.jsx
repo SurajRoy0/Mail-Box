@@ -18,6 +18,7 @@ const MailBox = () => {
       to: email,
       from: user.userEmail,
       message: message,
+      timeStamp: new Date(),
     };
     const res = await sentForInbox({
       toEmail: email,

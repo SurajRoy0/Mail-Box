@@ -27,15 +27,17 @@ function App() {
     </Routes>
     {auth.isLogin && <div className={styles.container}>
       <LogoHeader />
-      <div className={styles['left-container']}>
-        <SideMenu />
-      </div>
-      <div className={styles['right-container']}>
-        <Routes>
-          <Route path={'/'} element={<Inbox />} />
-          <Route path={'/sent'} element={<Sent />} />
-          <Route path={'/drafts'} element={<Draft />} />
-        </Routes>
+      <div className={styles['container-body']}>
+        <div className={styles['left-container']}>
+          <SideMenu />
+        </div>
+        <div className={styles['right-container']}>
+          <Routes>
+            <Route path={'/'} element={<Inbox />} />
+            <Route path={'/sent'} element={<Sent />} />
+            <Route path={'/drafts'} element={<Draft />} />
+          </Routes>
+        </div>
       </div>
       {isComposeOpen && <Compose />}
     </div>}

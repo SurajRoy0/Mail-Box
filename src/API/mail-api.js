@@ -24,7 +24,7 @@ export const sentForSentbox = async ({ fromEmail, data }) => {
     const formattedEmail = await formatEmail(fromEmail)
     try {
         const res = await axios.post(
-            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/inbox.json`,
+            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/sent.json`,
             {
                 data
             }
@@ -35,18 +35,18 @@ export const sentForSentbox = async ({ fromEmail, data }) => {
     }
 }
 
-export const gettingRecivedEmails = async ({ fromEmail }) => {
+export const gettingRecivedEmails = async (fromEmail) => {
     const formattedEmail = await formatEmail(fromEmail)
     try {
         const res = await axios.get(
-            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/sent.json`);
+            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/inbox.json`);
         return res.data;
     } catch (error) {
         return error;
     }
 }
 
-export const gettingSentEmails = async ({ fromEmail }) => {
+export const gettingSentEmails = async (fromEmail) => {
     const formattedEmail = await formatEmail(fromEmail)
     try {
         const res = await axios.get(

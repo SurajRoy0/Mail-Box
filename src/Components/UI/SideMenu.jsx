@@ -2,23 +2,30 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./SideMenu.module.css";
 import ComposeEmail from "./ComposeEmail";
+import { FiInbox, FiSend, FiEdit, FiLogOut } from "react-icons/fi";
 
 const SideMenu = () => {
   return (
     <div className={styles.sideMenu}>
-      <ComposeEmail />
+      <div className={styles.compose}>
+        <ComposeEmail />
+      </div>
+
       <ul className={styles.menuItems}>
-        <li className={styles.option}>
-          <NavLink to="/">Inbox</NavLink>
+        <li>
+          <NavLink className={styles.option} to="/">
+            <FiInbox className={styles.icon} /> Inbox
+          </NavLink>
         </li>
-        <li className={styles.option}>
-          <NavLink to="/sent">Sent</NavLink>
+        <li>
+          <NavLink className={styles.option} to="/sent">
+            <FiSend className={styles.icon} /> Sent
+          </NavLink>
         </li>
-        <li className={styles.option}>
-          <NavLink to="/drafts">Drafts</NavLink>
-        </li>
-        <li className={styles.option}>
-          <NavLink to="/compose">Sign Out</NavLink>
+        <li>
+          <NavLink className={styles.option} to="/drafts">
+            <FiEdit className={styles.icon} /> Drafts
+          </NavLink>
         </li>
       </ul>
     </div>
