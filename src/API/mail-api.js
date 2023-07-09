@@ -93,3 +93,14 @@ export const emailReadHandler = async ({ email, id, data }) => {
         return error;
     }
 }
+
+export const deteleEmail = async ({ email, id }) => {
+    const formattedEmail = await formatEmail(email)
+    try {
+        const res = await axios.delete(
+            `https://mail-box-14db9-default-rtdb.firebaseio.com/${formattedEmail}/inbox/${id}.json`);
+        return res.data;
+    } catch (error) {
+        return error;
+    }
+}
