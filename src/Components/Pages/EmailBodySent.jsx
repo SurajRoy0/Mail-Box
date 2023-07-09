@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./EmailBody.module.css";
-import { useLocation, useParams } from "react-router-dom";
-import { emailReadHandler, getInboxSingleEmail } from "../../API/mail-api";
+import { useParams } from "react-router-dom";
+import { getSentSingleEmail } from "../../API/mail-api";
 import { useSelector } from "react-redux";
 import { formatTimeStamp } from "../../HelperFunctions/helperFunctions";
 
@@ -11,7 +11,7 @@ const EmailBodySent = () => {
   const param = useParams();
   useEffect(() => {
     const fun = async () => {
-      const res = await getInboxSingleEmail({
+      const res = await getSentSingleEmail({
         email: userEmail,
         id: param.id,
       });
@@ -19,27 +19,6 @@ const EmailBodySent = () => {
     };
     fun();
   }, []);
-
-  useEffect(() => {
-    if (!email.isRead && email.isRead != undefined) {
-      console.log(email);
-      const emailRead = async () => {
-        const res = await emailReadHandler({
-          email: userEmail,
-          id: param.id,
-          data: {
-            to: userEmail,
-            from: email.from,
-            message: email.message,
-            timeStamp: email.timeStamp,
-            isRead: true,
-          },
-        });
-      };
-      emailRead();
-      console.log("isRead");
-    }
-  }, [email]);
 
   return (
     <div className={styles.emailBody}>

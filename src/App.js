@@ -10,6 +10,7 @@ import Sent from './Components/Pages/Sent';
 import Draft from './Components/Pages/Draft';
 import Compose from './Components/Pages/Compose';
 import EmailBody from './Components/Pages/EmailBody';
+import EmailBodySent from './Components/Pages/EmailBodySent';
 
 function App() {
   const isComposeOpen = useSelector(state => state.mail.isComposeOpen)
@@ -34,6 +35,7 @@ function App() {
             <Route path={'/sent'} element={<Sent />} />
             <Route path={'/drafts'} element={<Draft />} />
             <Route path={'/emails/:id'} element={<EmailBody />} />
+            <Route path={'/sent/:id'} element={<EmailBodySent />} />
           </Routes>
         </div>
       </div>

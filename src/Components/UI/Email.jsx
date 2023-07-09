@@ -6,8 +6,9 @@ import { FaCircle } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { deteleEmail } from "../../API/mail-api";
 
-const Email = ({ id, email }) => {
+const Email = ({ id, email, sent }) => {
   const userEmail = useSelector((state) => state.auth.userEmail);
+  const path = sent ? `/sent/${id}` : `/emails/${id}`;
   const deleteEmailHandler = async () => {
     const res = await deteleEmail({
       email: userEmail,
@@ -17,9 +18,9 @@ const Email = ({ id, email }) => {
   };
   return (
     <div className={styles.container}>
-      <Link to={`/emails/${id}`} className={styles.email}>
-        <div>{!email.isRead && <FaCircle />}</div>
-        <h4>{email.from}</h4>
+      <Link to={path} className={styles.email}>
+        <div>{!sent && !email.isRead && <FaCircle />}</div>
+        <h4>{sent ? email.to : email.from}</h4>
         <p dangerouslySetInnerHTML={{ __html: email.message }}></p>
         <span>{formatTimeStamp(email.timeStamp)}</span>
       </Link>

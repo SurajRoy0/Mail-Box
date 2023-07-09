@@ -4,12 +4,15 @@ import styles from "./Compose.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { composeCloseHandler } from "../../Store/mail-reducer";
 import { sentForInbox, sentForSentbox } from "../../API/mail-api";
+import { useNavigate } from "react-router-dom";
 
 const MailBox = () => {
   const toEmail = useRef();
   const areaRef = useRef();
   const user = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const handleSend = async () => {
     const email = toEmail.current.value;
@@ -35,6 +38,7 @@ const MailBox = () => {
         toEmail.current.value = "";
         areaRef.current.value = "";
         dispatch(composeCloseHandler());
+        navigate("/sent");
       }
     } else {
       alert("Failed! Please Try Again");
