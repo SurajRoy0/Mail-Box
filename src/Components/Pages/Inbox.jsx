@@ -16,20 +16,22 @@ const Inbox = () => {
   }, 0);
 
   useEffect(() => {
-    const fun = async () => {
+    const fetchData = async () => {
       const res = await gettingRecivedEmails(userEmail);
       if (res) {
         setEmails(Object.entries(res));
       }
     };
-    fun();
+    fetchData();
+    const interval = setInterval(fetchData, 2000);
+
+    console.log("run");
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     dispatch(setUnReadEmails(totalUnreadEmails));
   }, [emails]);
-
-  console.log(useSelector((state) => state.mail.unReadEmails));
 
   return (
     <div className={styles.inbox}>
