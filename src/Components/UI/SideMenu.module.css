@@ -28,7 +28,8 @@
   border-bottom: 1px solid whitesmoke;
 }
 
-.menuItems li a {
+.option span,
+.option svg {
   color: white;
   text-decoration: none;
   font-size: 18px;
@@ -42,6 +43,15 @@
 }
 
 .active {
-  background-color: #333;
-  color: #f1f1f1;
+  margin-left: 35px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.active span,
+.active svg {
+  color: rgb(65, 65, 241);
+  font-weight: 600;
+  font-size: 18px;
 }

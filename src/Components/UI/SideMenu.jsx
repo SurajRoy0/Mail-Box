@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const SideMenu = () => {
   const totalUnreadEmails = useSelector((state) => state.mail.unReadEmails);
+
   return (
     <div className={styles.sideMenu}>
       <div className={styles.compose}>
@@ -15,19 +16,36 @@ const SideMenu = () => {
 
       <ul className={styles.menuItems}>
         <li className={styles.inbox}>
-          <NavLink className={styles.option} to="/">
-            <FiInbox className={styles.icon} /> Inbox
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.option
+            }
+            to="/"
+            exact
+          >
+            <FiInbox className={styles.icon} /> <span>Inbox</span>
           </NavLink>
           <span>{totalUnreadEmails}</span>
         </li>
         <li>
-          <NavLink className={styles.option} to="/sent">
-            <FiSend className={styles.icon} /> Sent
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.option
+            }
+            to="/sent"
+          >
+            <FiSend className={styles.icon} /> <span>Sent</span>
           </NavLink>
         </li>
         <li>
-          <NavLink className={styles.option} to="/drafts">
-            <FiEdit className={styles.icon} /> Drafts
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.option
+            }
+            to="/drafts"
+          >
+            <FiEdit className={styles.icon} />
+            <span>Drafts</span>
           </NavLink>
         </li>
       </ul>
