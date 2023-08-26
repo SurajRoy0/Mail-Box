@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ComposeEmail.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { composeOpenHandler } from "../../Store/mail-reducer";
 const ComposeEmail = () => {
   const dispatch = useDispatch();

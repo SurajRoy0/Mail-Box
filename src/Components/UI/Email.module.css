@@ -24,8 +24,12 @@
   margin: 0;
 }
 
-.email h4 {
-  margin: 0;
+.identifier {
+  text-align: start;
+}
+
+.identifier h4 {
+  margin: 0%;
 }
 
 .email svg {

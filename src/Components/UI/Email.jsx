@@ -20,7 +20,9 @@ const Email = ({ id, email, sent }) => {
     <div className={styles.container}>
       <Link to={path} className={styles.email}>
         <div>{!sent && !email.isRead && <FaCircle />}</div>
-        <h4>{sent ? email.to : email.from}</h4>
+        <div className={styles.identifier}>
+          <h4>{sent ? email.to : email.from}</h4>
+        </div>
         <p dangerouslySetInnerHTML={{ __html: email.message }}></p>
         <span>{formatTimeStamp(email.timeStamp)}</span>
       </Link>

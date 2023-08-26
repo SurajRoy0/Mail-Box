@@ -19,7 +19,7 @@ const Inbox = () => {
     const fetchData = async () => {
       const res = await gettingRecivedEmails(userEmail);
       if (res) {
-        setEmails(Object.entries(res));
+        setEmails(Object.entries(res).reverse());
       }
     };
     fetchData();

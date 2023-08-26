@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./SideMenu.module.css";
 import ComposeEmail from "./ComposeEmail";
-import { FiInbox, FiSend, FiEdit, FiLogOut } from "react-icons/fi";
+import { FiInbox, FiSend, FiEdit } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
 const SideMenu = () => {
